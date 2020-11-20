@@ -23,6 +23,9 @@
   <ItemGroup>
     <QtMoc Include="..\Source\VsCacheCleaner.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\ThirdParty\Everything-SDK\include\Everything.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D111AB45-333B-463B-BC30-813DA8AFA933}</ProjectGuid>
     <Keyword>QtVS_v303</Keyword>
@@ -57,10 +60,28 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">
     <OutDir>$(SolutionDir)Binary\$(Configuration)\</OutDir>
+    <LibraryPath>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">
     <OutDir>$(SolutionDir)Binary\$(Configuration)\</OutDir>
+    <LibraryPath>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>copy $(ProjectDir)..\Source\ThirdParty\Everything-SDK\dll\Everything32.dll $(OutDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>copy $(ProjectDir)..\Source\ThirdParty\Everything-SDK\dll\Everything32.dll $(OutDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="QtSettings">
     <QtInstall>msvc2017</QtInstall>
     <QtModules>core;gui;widgets</QtModules>

@@ -22,6 +22,12 @@
       <Extensions>qrc;*</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
+    <Filter Include="ThirdParty">
+      <UniqueIdentifier>{1124ca4d-4a64-40dc-a612-1587179e1ee8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\Everything-SDK">
+      <UniqueIdentifier>{552fa0d7-39cb-4c9f-8e3f-d56f16e11b1b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="..\Source\VsCacheCleaner.qrc">
@@ -45,5 +51,10 @@
     <QtMoc Include="..\Source\VsCacheCleaner.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\ThirdParty\Everything-SDK\include\Everything.h">
+      <Filter>ThirdParty\Everything-SDK</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
