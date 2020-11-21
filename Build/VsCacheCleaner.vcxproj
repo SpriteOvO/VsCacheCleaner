@@ -71,7 +71,9 @@
       <AdditionalIncludeDirectories>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)..\Source\ThirdParty\Everything-SDK\dll\Everything32.dll $(OutDir)</Command>
+      <Command>copy $(ProjectDir)..\Source\ThirdParty\Everything-SDK\dll\Everything32.dll $(OutDir)
+mkdir $(OutDir)Everything
+xcopy $(ProjectDir)..\Resource\Everything $(OutDir)Everything /s /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -79,7 +81,9 @@
       <AdditionalIncludeDirectories>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)..\Source\ThirdParty\Everything-SDK\dll\Everything32.dll $(OutDir)</Command>
+      <Command>copy $(ProjectDir)..\Source\ThirdParty\Everything-SDK\dll\Everything32.dll $(OutDir)
+mkdir $(OutDir)Everything
+xcopy $(ProjectDir)..\Resource\Everything $(OutDir)Everything /s /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="QtSettings">
