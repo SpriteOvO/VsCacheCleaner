@@ -1789,15 +1789,20 @@ DWORD EVERYTHINGAPI Everything_GetResultFullPathNameW(DWORD dwIndex,LPWSTR wbuf,
 			if (_Everything_IsUnicodeQuery)		
 			{
 				len = _Everything_CopyW(wbuf,wbuf_size_in_wchars,0,EVERYTHING_IPC_ITEMPATHW(_Everything_List,&((EVERYTHING_IPC_LISTW *)_Everything_List)->items[dwIndex]));
+
+				if (len)
+				{
+					len = _Everything_CopyW(wbuf,wbuf_size_in_wchars,len,_Everything_IsSchemeNameW(EVERYTHING_IPC_ITEMPATHW(_Everything_List,&((EVERYTHING_IPC_LISTW *)_Everything_List)->items[dwIndex])) ? L"/" : L"\\");
+				}
 			}
 			else
 			{
 				len = _Everything_CopyWFromA(wbuf,wbuf_size_in_wchars,0,EVERYTHING_IPC_ITEMPATHA(_Everything_List,&((EVERYTHING_IPC_LISTA *)_Everything_List)->items[dwIndex]));
-			}
 				
-			if (len)
-			{
-				len = _Everything_CopyW(wbuf,wbuf_size_in_wchars,len,_Everything_IsSchemeNameW(wbuf) ? L"/" : L"\\");
+				if (len)
+				{
+					len = _Everything_CopyW(wbuf,wbuf_size_in_wchars,len,_Everything_IsSchemeNameA(EVERYTHING_IPC_ITEMPATHA(_Everything_List,&((EVERYTHING_IPC_LISTA *)_Everything_List)->items[dwIndex])) ? L"/" : L"\\");
+				}
 			}
 
 			if (_Everything_IsUnicodeQuery)		
@@ -1863,15 +1868,20 @@ DWORD EVERYTHINGAPI Everything_GetResultFullPathNameW(DWORD dwIndex,LPWSTR wbuf,
 						if (_Everything_IsUnicodeQuery)		
 						{
 							len = _Everything_CopyW(wbuf,wbuf_size_in_wchars,0,path);
+
+							if (len)
+							{
+								len = _Everything_CopyW(wbuf,wbuf_size_in_wchars,len,_Everything_IsSchemeNameW(path) ? L"/" : L"\\");
+							}
 						}
 						else
 						{
 							len = _Everything_CopyWFromA(wbuf,wbuf_size_in_wchars,0,path);
-						}
-							
-						if (len)
-						{
-							len = _Everything_CopyW(wbuf,wbuf_size_in_wchars,len,_Everything_IsSchemeNameW(wbuf) ? L"/" : L"\\");
+
+							if (len)
+							{
+								len = _Everything_CopyW(wbuf,wbuf_size_in_wchars,len,_Everything_IsSchemeNameA(path) ? L"/" : L"\\");
+							}
 						}
 
 						if (_Everything_IsUnicodeQuery)		
