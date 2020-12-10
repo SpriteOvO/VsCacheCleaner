@@ -11,20 +11,36 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="..\Source\VsCacheCleaner.qrc" />
+    <QtRcc Include="..\Source\Resource.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="..\Source\VsCacheCleaner.ui" />
+    <QtUic Include="..\Source\MainWindow.ui" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Source\main.cpp" />
-    <ClCompile Include="..\Source\VsCacheCleaner.cpp" />
+    <ClCompile Include="..\Source\IEverything.cpp" />
+    <ClCompile Include="..\Source\Utils.cpp" />
+    <ClCompile Include="..\Source\MainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="..\Source\VsCacheCleaner.h" />
+    <QtMoc Include="..\Source\MainWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Source\Config.h" />
+    <ClInclude Include="..\Source\IEverything.h" />
+    <ClInclude Include="..\Source\Resource.h" />
     <ClInclude Include="..\Source\ThirdParty\Everything-SDK\include\Everything.h" />
+    <ClInclude Include="..\Source\ThirdParty\MinHook\include\MinHook.h" />
+    <ClInclude Include="..\Source\Utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Source\Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resource\Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Resource\Icon.svg" />
+    <None Include="..\Resource\Translations\vcc_zh_CN.ts" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D111AB45-333B-463B-BC30-813DA8AFA933}</ProjectGuid>
@@ -60,41 +76,61 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">
     <OutDir>$(SolutionDir)Binary\$(Configuration)\</OutDir>
-    <LibraryPath>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\lib;$(ProjectDir)..\Source\ThirdParty\MinHook\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">
     <OutDir>$(SolutionDir)Binary\$(Configuration)\</OutDir>
-    <LibraryPath>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\lib;$(ProjectDir)..\Source\ThirdParty\MinHook\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\include;$(ProjectDir)..\Source\ThirdParty\MinHook\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)..\Source\ThirdParty\Everything-SDK\dll\Everything32.dll $(OutDir)
-mkdir $(OutDir)Everything
-xcopy $(ProjectDir)..\Resource\Everything $(OutDir)Everything /s /y</Command>
+      <Command>copy /v "$(ProjectDir)..\Source\ThirdParty\Everything-SDK\dll\Everything32.dll" "$(OutDir)"
+copy /v "$(ProjectDir)..\Source\ThirdParty\MinHook\dll\MinHook.x86.dll" "$(OutDir)"
+mkdir "$(OutDir)Everything"
+xcopy "$(ProjectDir)..\Resource\Everything" "$(OutDir)Everything" /s /v /q
+xcopy "$(ProjectDir)..\Resource\Translations\*.qm" "$(OutDir)translations" /s /v /q</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>rmdir /s /q "$(OutDir)"</Command>
+    </PreBuildEvent>
+    <Link>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Source\ThirdParty\Everything-SDK\include;$(ProjectDir)..\Source\ThirdParty\MinHook\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)..\Source\ThirdParty\Everything-SDK\dll\Everything32.dll $(OutDir)
-mkdir $(OutDir)Everything
-xcopy $(ProjectDir)..\Resource\Everything $(OutDir)Everything /s /y</Command>
+      <Command>copy /v "$(ProjectDir)..\Source\ThirdParty\Everything-SDK\dll\Everything32.dll" "$(OutDir)"
+copy /v "$(ProjectDir)..\Source\ThirdParty\MinHook\dll\MinHook.x86.dll" "$(OutDir)"
+mkdir "$(OutDir)Everything"
+xcopy "$(ProjectDir)..\Resource\Everything" "$(OutDir)Everything" /s /v /q
+xcopy "$(ProjectDir)..\Resource\Translations\*.qm" "$(OutDir)translations" /s /v /q</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>rmdir /s /q "$(OutDir)"</Command>
+    </PreBuildEvent>
+    <Link>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
   </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="QtSettings">
     <QtInstall>msvc2017</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>charts;core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="QtSettings">
     <QtInstall>msvc2017</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>charts;core;gui;widgets</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>

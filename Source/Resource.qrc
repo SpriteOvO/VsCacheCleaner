@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="VsCacheCleaner">
+    <file>../Resource/Icon.svg</file>
+  </qresource>
+</RCC>

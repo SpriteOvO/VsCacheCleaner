@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   t="1607302333209"
+   class="icon"
+   viewBox="0 0 1024 1024"
+   version="1.1"
+   p-id="598"
+   width="256"
+   height="256"
+   id="svg32"
+   sodipodi:docname="icon_clear.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata36">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2294"
+     inkscape:window-height="1223"
+     id="namedview34"
+     showgrid="false"
+     inkscape:zoom="2.9101562"
+     inkscape:cx="128"
+     inkscape:cy="128"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg32" />
+  <defs
+     id="defs26">
+    <style
+       type="text/css"
+       id="style24" />
+  </defs>
+  <path
+     d="M422.473143 213.577143l387.949714 387.949714-198.436571 282.112a48.786286 48.786286 0 0 1-74.386286 6.436572l-70.070857-70.144V670.354286H317.952L133.924571 486.4a48.786286 48.786286 0 0 1 6.436572-74.386286L422.473143 213.577143z m181.979428-78.628572l101.888 101.888 107.154286-107.154285c9.508571-9.508571 24.941714-9.508571 34.450286 0l40.228571 40.228571a24.356571 24.356571 0 0 1 0 34.450286L781.019429 311.588571l108.032 108.032c16.822857 16.822857 19.017143 43.154286 5.412571 62.537143l-53.174857 75.556572-375.003429-374.930286 75.629715-53.174857a48.786286 48.786286 0 0 1 62.537142 5.412571z"
+     fill="#3385FF"
+     p-id="600"
+     id="path30" />
+</svg>

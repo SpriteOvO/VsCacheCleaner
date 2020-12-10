@@ -28,33 +28,77 @@
     <Filter Include="ThirdParty\Everything-SDK">
       <UniqueIdentifier>{552fa0d7-39cb-4c9f-8e3f-d56f16e11b1b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="ThirdParty\MinHook">
+      <UniqueIdentifier>{3c172ac3-938f-45fc-89fd-4bbfddeede4c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="..\Source\VsCacheCleaner.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="..\Source\VsCacheCleaner.ui">
-      <Filter>Resource Files</Filter>
-    </QtUic>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Source\main.cpp">
+    <ClCompile Include="..\Source\IEverything.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\VsCacheCleaner.cpp">
+    <ClCompile Include="..\Source\Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="..\Source\VsCacheCleaner.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
+    <ClCompile Include="..\Source\MainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\ThirdParty\Everything-SDK\include\Everything.h">
       <Filter>ThirdParty\Everything-SDK</Filter>
     </ClInclude>
+    <ClInclude Include="..\Source\IEverything.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\ThirdParty\MinHook\include\MinHook.h">
+      <Filter>ThirdParty\MinHook</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="..\Source\MainWindow.ui">
+      <Filter>Resource Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="..\Source\Resource.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Source\Resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resource\Icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\Source\MainWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Resource\Icon.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Resource\Translations\vcc_zh_CN.ts">
+      <Filter>Resource Files\Translation Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
