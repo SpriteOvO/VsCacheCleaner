@@ -1276,7 +1276,7 @@ namespace UserInterface
                 .arg(VCC_URL_REPO).arg("GitHub")
                 .arg(VCC_URL_LICENSE).arg(VCC_LICENSE)
                 .arg("https://www.voidtools.com/").arg("Everything")
-                .arg("<p>Copyright © 2020 SpriteOvO. All rights reserved.</p>");
+                .arg("<p>Copyright © 2020-2021 SpriteOvO. All rights reserved.</p>");
 
             QMessageBox::about(this, tr("About VsCacheCleaner"), content);
             break;

@@ -83,7 +83,7 @@ BEGIN
             VALUE "FileDescription", "Visual Studio Solution Cache Cleaner"
             VALUE "FileVersion", VCC_VERSION_RSRC_STR
             VALUE "InternalName", "VsCacheCleaner.exe"
-            VALUE "LegalCopyright", "Copyright (C) 2020 SpriteOvO. All rights reserved."
+            VALUE "LegalCopyright", "Copyright (C) 2020-2021 SpriteOvO. All rights reserved."
             VALUE "OriginalFilename", "VsCacheCleaner.exe"
             VALUE "ProductName", "VsCacheCleaner"
             VALUE "ProductVersion", VCC_VERSION_RSRC_STR
