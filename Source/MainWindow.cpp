@@ -918,7 +918,7 @@ namespace UserInterface
                 }
 
                 setControlsDisabledSafety(false);
-                showStatusMessageSafety(StatusTypeE::Info, tr("Ready."));
+                showReady();
             },
             [this]()
             {
@@ -1029,6 +1029,12 @@ namespace UserInterface
     {
         resetDiskStatsChart();
         getCacheItemsTableModel()->clearData();
+        showReady();
+    }
+
+    void MainWindowT::showReady()
+    {
+        showStatusMessageSafety(StatusTypeE::Info, tr("Ready."));
     }
 
     void MainWindowT::selectButtonClicked()

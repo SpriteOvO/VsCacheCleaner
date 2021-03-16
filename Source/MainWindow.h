@@ -213,6 +213,7 @@ namespace UserInterface
         void updateDiskStatsChart(quint64 cache);
         void resetDiskStatsChart();
         void clearData();
+        void showReady();
 
     private Q_SLOTS:
         void selectButtonClicked();
