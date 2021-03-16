@@ -645,7 +645,7 @@ namespace UserInterface
         auto *cacheItemsTableModel = new CacheItemsTableModelT{_ui.tableViewItems};
         auto *cacheItemsDelegate = new CacheItemsDelegateT{_ui.tableViewItems};
         auto *cacheItemsHeader = new CacheItemsHeaderViewT{Qt::Orientation::Horizontal, _ui.tableViewItems};
-        _cacheItemsRcMenu = new CacheItemsRcMenuT(this);
+        _cacheItemsRcMenu = new CacheItemsRcMenuT{this};
 
         _ui.tableViewItems->setModel(cacheItemsTableModel);
         _ui.tableViewItems->setItemDelegate(cacheItemsDelegate);
