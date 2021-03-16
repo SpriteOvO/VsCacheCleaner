@@ -1029,7 +1029,6 @@ namespace UserInterface
     {
         resetDiskStatsChart();
         getCacheItemsTableModel()->clearData();
-        showReady();
     }
 
     void MainWindowT::showReady()
@@ -1046,6 +1045,7 @@ namespace UserInterface
 
         _ui.lineEditPath->setText(QDir::toNativeSeparators(path));
         clearData();
+        showReady();
     }
 
     void MainWindowT::scanButtonClicked()
